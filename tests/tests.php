@@ -23,10 +23,9 @@ function getTestDb(): Database {
 
 // test 1: check database connection
 function testDbConnection() {
-    $config = require __DIR__ . '/../config.php';
     $db = getTestDb();
+    // Достаточно проверить, что объект создан и может выполнить простейший запрос
     $result = $db->Execute("SELECT 1");
-    unlink((new ReflectionProperty($db, 'pdo'))->getValue($db)->getAttribute(PDO::ATTR_CONNECTION_STATUS) ? '/dev/null' : '/dev/null'); // заглушка, реальная проверка ниже
     return assertExpression($result !== false, 'DB connection OK', 'DB connection failed');
 }
 
