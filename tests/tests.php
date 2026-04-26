@@ -160,4 +160,4 @@ $tests->add('Page render', 'testPageRender');
 // run tests
 $tests->run();
 
-echo PHP_EOL . '=== Results: ' . $tests->getResult() . ' ===' . PHP_EOL;
+echo PHP_EOL . 'Results: ' . $tests->getResult() . '.' . PHP_EOL;
